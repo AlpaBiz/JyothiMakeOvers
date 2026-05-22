@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Makeover Magic by Jyothi | Bridal Makeup & Hairstyling Telangana</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8D5A3;
+    --gold-dark: #8B6914;
+    --rose: #8B2252;
+    --rose-light: #F5E6EE;
+    --deep: #1A0A0F;
+    --cream: #FAF6F0;
+    --text: #2C1A1A;
+    --muted: #7A5C5C;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 4rem;
+    background: rgba(250, 246, 240, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+    transition: all 0.3s;
+  }
+  nav.scrolled {
+    padding: 0.8rem 4rem;
+    background: rgba(250, 246, 240, 0.98);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--rose);
+    letter-spacing: 0.02em;
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--gold); }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.82rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text);
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute; bottom: -3px; left: 0; right: 0; height: 1px;
+    background: var(--gold);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.3s;
+  }
+  .nav-links a:hover { color: var(--gold-dark); }
+  .nav-links a:hover::after { transform: scaleX(1); }
+  .nav-cta {
+    background: var(--rose);
+    color: white !important;
+    padding: 0.55rem 1.4rem;
+    border-radius: 2px;
+    letter-spacing: 0.1em;
+    font-size: 0.78rem;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+  .nav-cta:hover { background: var(--gold-dark) !important; }
+  .nav-cta::after { display: none !important; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 70% 50%, rgba(201,168,76,0.06) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .hero-left {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 6rem 3rem 6rem 6rem;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold-dark); margin-bottom: 1.5rem;
+  }
+  .hero-tag::before {
+    content: ''; display: inline-block; width: 30px; height: 1px; background: var(--gold);
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 5vw, 5rem);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--deep);
+    margin-bottom: 0.3rem;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--rose);
+    display: block;
+  }
+  .hero h1 strong {
+    font-weight: 600;
+    color: var(--gold-dark);
+  }
+  .hero-sub {
+    font-size: 1rem;
+    color: var(--muted);
+    line-height: 1.7;
+    margin: 1.5rem 0 2.5rem;
+    max-width: 400px;
+    font-weight: 300;
+  }
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--rose);
+    color: white;
+    padding: 0.9rem 2.2rem;
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border: 2px solid var(--rose);
+    transition: all 0.3s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: transparent; color: var(--rose); }
+  .btn-outline {
+    background: transparent;
+    color: var(--gold-dark);
+    padding: 0.9rem 2.2rem;
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border: 1.5px solid var(--gold);
+    transition: all 0.3s;
+    display: inline-block;
+  }
+  .btn-outline:hover { background: var(--gold); color: white; }
+  .hero-stats {
+    display: flex; gap: 2.5rem; margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(201,168,76,0.25);
+  }
+  .hero-stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem; font-weight: 600;
+    color: var(--rose); line-height: 1;
+  }
+  .hero-stat-label {
+    font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--muted); margin-top: 0.3rem;
+  }
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: 100%;
+    gap: 4px;
+  }
+  .hero-img {
+    overflow: hidden;
+    position: relative;
+  }
+  .hero-img img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+  }
+  .hero-img:hover img { transform: scale(1.05); }
+  .hero-img.tall { grid-row: span 2; }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(26,10,15,0.3) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  /* MARQUEE STRIP */
+  .marquee-strip {
+    background: var(--rose);
+    color: white;
+    padding: 0.9rem 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .marquee-inner {
+    display: inline-flex;
+    animation: marquee 25s linear infinite;
+  }
+  .marquee-item {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 0 2.5rem;
+    opacity: 0.9;
+  }
+  .marquee-item::before {
+    content: '✦'; margin-right: 2.5rem; color: var(--gold-light);
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* SECTIONS */
+  section { padding: 6rem 0; }
+
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 4rem; }
+
+  .section-tag {
+    font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--gold-dark);
+    display: flex; align-items: center; gap: 0.8rem;
+    margin-bottom: 1rem;
+  }
+  .section-tag::before {
+    content: ''; display: block; width: 40px; height: 1px; background: var(--gold);
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--deep);
+  }
+  .section-title em { font-style: italic; color: var(--rose); }
+
+  /* ABOUT */
+  .about {
+    background: white;
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  .about-img-wrap {
+    position: relative;
+  }
+  .about-img-wrap img {
+    width: 100%; aspect-ratio: 4/5;
+    object-fit: cover;
+    display: block;
+  }
+  .about-img-wrap::after {
+    content: '';
+    position: absolute;
+    top: 20px; right: -20px;
+    bottom: -20px; left: 20px;
+    border: 1.5px solid var(--gold);
+    z-index: -1;
+  }
+  .about-img-tag {
+    position: absolute;
+    bottom: 30px; left: -30px;
+    background: var(--rose);
+    color: white;
+    padding: 1.2rem 1.5rem;
+    z-index: 2;
+  }
+  .about-img-tag strong {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    display: block;
+    line-height: 1;
+  }
+  .about-img-tag span {
+    font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
+    opacity: 0.85;
+  }
+  .about-text p {
+    color: var(--muted); line-height: 1.85; font-weight: 300;
+    margin-bottom: 1.2rem; font-size: 0.98rem;
+  }
+  .about-features {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+    margin-top: 2rem;
+  }
+  .about-feature {
+    display: flex; align-items: flex-start; gap: 0.8rem;
+  }
+  .about-feature-icon {
+    width: 36px; height: 36px; flex-shrink: 0;
+    border: 1px solid var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold-dark); font-size: 1rem;
+  }
+  .about-feature-text {
+    font-size: 0.85rem; color: var(--text);
+    font-weight: 400; line-height: 1.4;
+  }
+  .about-feature-text small {
+    display: block; color: var(--muted); font-size: 0.75rem; margin-top: 0.2rem;
+  }
+
+  /* SERVICES */
+  .services { background: var(--cream); }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+    margin-top: 3.5rem;
+    background: rgba(201,168,76,0.2);
+    border: 1px solid rgba(201,168,76,0.2);
+  }
+  .service-card {
+    background: white;
+    padding: 2.5rem 2rem;
+    transition: all 0.4s;
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+  }
+  .service-card::before {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+    background: var(--rose);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.4s;
+  }
+  .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(139,34,82,0.12); }
+  .service-card:hover::before { transform: scaleX(1); }
+  .service-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem; font-weight: 600;
+    color: rgba(201,168,76,0.2);
+    line-height: 1; margin-bottom: 1rem;
+  }
+  .service-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 600;
+    color: var(--deep); margin-bottom: 0.8rem;
+  }
+  .service-desc {
+    font-size: 0.86rem; color: var(--muted); line-height: 1.7; font-weight: 300;
+  }
+  .service-tags {
+    display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1.2rem;
+  }
+  .service-tag {
+    font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--rose); border: 1px solid rgba(139,34,82,0.3);
+    padding: 0.25rem 0.6rem; border-radius: 1px;
+  }
+
+  /* GALLERY */
+  .gallery { background: var(--deep); padding: 6rem 0; }
+  .gallery .section-tag { color: var(--gold-light); }
+  .gallery .section-tag::before { background: var(--gold); }
+  .gallery .section-title { color: white; }
+  .gallery .section-title em { color: var(--gold-light); }
+  .gallery-filter {
+    display: flex; gap: 1rem; margin: 2.5rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 1rem;
+  }
+  .filter-btn {
+    font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    background: none; border: none;
+    cursor: pointer; padding: 0.4rem 0;
+    transition: all 0.3s;
+    position: relative;
+  }
+  .filter-btn::after {
+    content: '';
+    position: absolute; bottom: -1rem; left: 0; right: 0; height: 2px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.3s;
+  }
+  .filter-btn.active { color: var(--gold-light); }
+  .filter-btn.active::after { transform: scaleX(1); }
+  .filter-btn:hover { color: white; }
+  .gallery-grid {
+    columns: 4; gap: 6px;
+  }
+  .gallery-item {
+    break-inside: avoid;
+    overflow: hidden;
+    display: block;
+    margin-bottom: 6px;
+    position: relative;
+    cursor: pointer;
+  }
+  .gallery-item img {
+    width: 100%; height: auto; display: block;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+    filter: brightness(0.92);
+  }
+  .gallery-item:hover img { transform: scale(1.04); filter: brightness(1); }
+  .gallery-item-overlay {
+    position: absolute; inset: 0;
+    background: rgba(139,34,82,0.6);
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; transition: opacity 0.4s;
+  }
+  .gallery-item:hover .gallery-item-overlay { opacity: 1; }
+  .gallery-overlay-icon {
+    color: white; font-size: 2rem;
+  }
+
+  /* VIDEO */
+  .video-section { background: white; }
+  .video-placeholder {
+    background: var(--deep);
+    border-radius: 4px;
+    aspect-ratio: 16/9;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    margin-top: 3rem;
+  }
+  .video-placeholder::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(201,168,76,0.08) 0%, transparent 60%);
+  }
+  .play-btn {
+    width: 80px; height: 80px; border-radius: 50%;
+    border: 2px solid var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold); font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s;
+    position: relative; z-index: 1;
+  }
+  .video-placeholder:hover .play-btn {
+    background: var(--gold); color: var(--deep); transform: scale(1.05);
+  }
+  .video-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem; font-weight: 300;
+    color: rgba(255,255,255,0.85);
+    position: relative; z-index: 1;
+  }
+  .video-sublabel {
+    font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-top: 0.5rem;
+    position: relative; z-index: 1;
+  }
+  .reels-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .reel-embed-wrap {
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(201,168,76,0.25);
+    background: var(--deep);
+  }
+  .reel-embed-wrap iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+  }
+  @media (max-width: 900px) {
+    .reels-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) {
+    .reels-grid { grid-template-columns: 1fr; }
+  }
+
+  /* TESTIMONIALS */
+  .testimonials { background: var(--rose-light); }
+  .testimonials-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+    margin-top: 3.5rem;
+  }
+  .testimonial-card {
+    background: white;
+    padding: 2rem;
+    border-top: 3px solid var(--gold);
+    transition: box-shadow 0.3s;
+  }
+  .testimonial-card:hover { box-shadow: 0 8px 30px rgba(139,34,82,0.1); }
+  .stars { color: var(--gold); letter-spacing: 0.1em; margin-bottom: 1rem; font-size: 0.85rem; }
+  .testimonial-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem; font-weight: 400;
+    color: var(--text); line-height: 1.7;
+    font-style: italic; margin-bottom: 1.5rem;
+  }
+  .testimonial-author { display: flex; align-items: center; gap: 0.8rem; }
+  .author-avatar {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: var(--rose); display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 0.85rem; font-weight: 500; flex-shrink: 0;
+  }
+  .author-name { font-size: 0.88rem; font-weight: 500; color: var(--text); }
+  .author-event { font-size: 0.72rem; color: var(--muted); margin-top: 0.1rem; }
+
+  /* CONTACT */
+  .contact { background: white; }
+  .contact-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;
+    margin-top: 3.5rem; align-items: start;
+  }
+  .contact-info { }
+  .contact-info p {
+    color: var(--muted); font-weight: 300; line-height: 1.8; margin-bottom: 2rem;
+  }
+  .contact-detail {
+    display: flex; align-items: flex-start; gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .contact-detail-icon {
+    width: 44px; height: 44px; flex-shrink: 0;
+    border: 1px solid var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold-dark); font-size: 1.1rem;
+  }
+  .contact-detail-label {
+    font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 0.3rem;
+  }
+  .contact-detail-value {
+    font-size: 0.95rem; color: var(--text); font-weight: 400;
+  }
+  .contact-social {
+    display: flex; gap: 1rem; margin-top: 2rem;
+  }
+  .social-btn {
+    width: 44px; height: 44px;
+    border: 1px solid rgba(201,168,76,0.4);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold-dark); font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  .social-btn:hover { background: var(--rose); border-color: var(--rose); color: white; }
+  .contact-form { }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+  .form-group { margin-bottom: 1rem; }
+  .form-group label {
+    font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--muted); display: block; margin-bottom: 0.5rem;
+  }
+  .form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 1px solid rgba(201,168,76,0.3);
+    background: var(--cream);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.3s;
+    appearance: none; border-radius: 0;
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: var(--gold);
+    background: white;
+  }
+  .form-group textarea { resize: vertical; min-height: 110px; }
+
+  /* FOOTER */
+  footer {
+    background: var(--deep);
+    color: rgba(255,255,255,0.6);
+    padding: 4rem 0 2rem;
+  }
+  .footer-grid {
+    display: grid; grid-template-columns: 2fr 1fr 1fr;
+    gap: 4rem; margin-bottom: 3rem;
+  }
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem; font-weight: 300;
+    color: white; margin-bottom: 1rem;
+  }
+  .footer-logo span { color: var(--gold); }
+  .footer-tagline {
+    font-size: 0.85rem; line-height: 1.7; font-weight: 300;
+    max-width: 280px; margin-bottom: 1.5rem;
+  }
+  .footer-heading {
+    font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold-light); margin-bottom: 1.2rem;
+  }
+  .footer-links { list-style: none; }
+  .footer-links li { margin-bottom: 0.7rem; }
+  .footer-links a {
+    color: rgba(255,255,255,0.5); text-decoration: none;
+    font-size: 0.88rem; transition: color 0.3s;
+  }
+  .footer-links a:hover { color: var(--gold-light); }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 1.5rem;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 0.78rem;
+  }
+  .footer-bottom a { color: var(--gold-light); text-decoration: none; }
+
+  /* ANIMATIONS */
+  .fade-up {
+    opacity: 0; transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  /* MOBILE */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 3rem 1.5rem; }
+    .hero-right { min-height: 50vw; }
+    .container { padding: 0 1.5rem; }
+    .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .gallery-grid { columns: 2; }
+    .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .video-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">Makeover <span>Magic</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#contact" class="nav-cta">Book Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <div class="hero-tag">Certified MUA · Telangana</div>
+    <h1>
+      Blending
+      <em>Colours,</em>
+      <strong>Creating Magic</strong>
+    </h1>
+    <p class="hero-sub">South Indian bridal artistry, HD glam, and exquisite hairstyling — by Jyothi, serving brides across all of Telangana.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Book Your Look</a>
+      <a href="#gallery" class="btn-outline">View Portfolio</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">200+</div>
+        <div class="hero-stat-label">Brides Made Up</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">5★</div>
+        <div class="hero-stat-label">Client Reviews</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">All</div>
+        <div class="hero-stat-label">Telangana</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-grid">
+      <div class="hero-img tall">
+        <img src="photo1.png" alt="Jyothi doing bridal makeup" loading="eager">
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="hero-img">
+        <img src="photo2.png" alt="Bridal makeup result" loading="eager">
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="hero-img">
+        <img src="photo3.png" alt="Bridal hairstyle" loading="eager">
+        <div class="hero-overlay"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-strip">
+  <div class="marquee-inner">
+    <span class="marquee-item">Bridal Makeup</span>
+    <span class="marquee-item">Engagement Glam</span>
+    <span class="marquee-item">HD Makeup</span>
+    <span class="marquee-item">Bridal Hairstyles</span>
+    <span class="marquee-item">Saree Box Folding</span>
+    <span class="marquee-item">Pre Pleating</span>
+    <span class="marquee-item">Party Makeup</span>
+    <span class="marquee-item">Serving All Telangana</span>
+    <span class="marquee-item">Bridal Makeup</span>
+    <span class="marquee-item">Engagement Glam</span>
+    <span class="marquee-item">HD Makeup</span>
+    <span class="marquee-item">Bridal Hairstyles</span>
+    <span class="marquee-item">Saree Box Folding</span>
+    <span class="marquee-item">Pre Pleating</span>
+    <span class="marquee-item">Party Makeup</span>
+    <span class="marquee-item">Serving All Telangana</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-wrap fade-up">
+        <img src="photo.png" alt="Jyothi Makeovers at work">
+        <div class="about-img-tag">
+          <strong>Jyothi</strong>
+          <span>Certified MUA</span>
+        </div>
+      </div>
+      <div class="about-text fade-up">
+        <div class="section-tag">The Artist Behind the Magic</div>
+        <h2 class="section-title">Where <em>Beauty</em> Meets Artistry</h2>
+        <p style="margin-top:1.5rem;">Welcome to Makeover Magic by Jyothi — where every bride's vision is transformed into reality. As a certified makeup artist with a passion for South Indian bridal aesthetics, Jyothi brings precision, creativity, and warmth to every appointment.</p>
+        <p>Whether it's a grand wedding, intimate engagement, or festive celebration, the focus is always on enhancing your natural beauty while staying true to your personal style and cultural heritage.</p>
+        <p>Proudly serving brides and families across all districts of Telangana — from Hyderabad to every corner of the state.</p>
+        <div class="about-features">
+          <div class="about-feature">
+            <div class="about-feature-icon">✦</div>
+            <div class="about-feature-text">
+              Certified MUA
+              <small>Professionally trained & certified</small>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon">♥</div>
+            <div class="about-feature-text">
+              South Indian Specialist
+              <small>Traditional & modern bridal looks</small>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon">◈</div>
+            <div class="about-feature-text">
+              HD Glam Expert
+              <small>Camera-ready, flawless finish</small>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon">✿</div>
+            <div class="about-feature-text">
+              Pan-Telangana Service
+              <small>Available at your location</small>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:2.5rem;">
+          <a href="https://www.instagram.com/__makeovermagic__/" target="_blank" class="btn-primary">Follow on Instagram</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="fade-up">
+      <div class="section-tag">What We Offer</div>
+      <h2 class="section-title">Our <em>Signature</em> Services</h2>
+    </div>
+    <div class="services-grid fade-up">
+      <div class="service-card">
+        <div class="service-num">01</div>
+        <div class="service-name">Bridal Makeup</div>
+        <p class="service-desc">Flawless, long-lasting bridal makeup tailored to your skin tone and wedding aesthetic. From traditional South Indian looks to modern glam.</p>
+        <div class="service-tags">
+          <span class="service-tag">South Indian</span>
+          <span class="service-tag">Traditional</span>
+          <span class="service-tag">Modern</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-num">02</div>
+        <div class="service-name">Engagement Glam</div>
+        <p class="service-desc">Radiant and polished looks perfect for your engagement ceremony — fresh, glowing, and utterly photogenic.</p>
+        <div class="service-tags">
+          <span class="service-tag">Dewy Glow</span>
+          <span class="service-tag">Natural</span>
+          <span class="service-tag">Elegant</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-num">03</div>
+        <div class="service-name">HD Glam Makeup</div>
+        <p class="service-desc">High-definition makeup designed to look stunning both in person and on camera. Perfect for events, shoots, and special occasions.</p>
+        <div class="service-tags">
+          <span class="service-tag">Camera Ready</span>
+          <span class="service-tag">High Definition</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-num">04</div>
+        <div class="service-name">Bridal Hairstyling</div>
+        <p class="service-desc">Intricate braids, elegant updos, and traditional South Indian hairstyles adorned with gajra, pearl pins, and floral accessories.</p>
+        <div class="service-tags">
+          <span class="service-tag">Braids</span>
+          <span class="service-tag">Updos</span>
+          <span class="service-tag">Traditional</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-num">05</div>
+        <div class="service-name">Saree Draping</div>
+        <p class="service-desc">Expert saree box folding and pre-pleating services — ensuring the perfect drape for your special day.</p>
+        <div class="service-tags">
+          <span class="service-tag">Box Folding</span>
+          <span class="service-tag">Pre Pleating</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-num">06</div>
+        <div class="service-name">Party & Event Makeup</div>
+        <p class="service-desc">Stunning looks for receptions, sangeet, mehndi, and all festive celebrations. Glam that lasts all night long.</p>
+        <div class="service-tags">
+          <span class="service-tag">Receptions</span>
+          <span class="service-tag">Sangeet</span>
+          <span class="service-tag">Festive</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="fade-up">
+      <div class="section-tag">Portfolio</div>
+      <h2 class="section-title">The <em>Gallery</em></h2>
+    </div>
+    <div class="gallery-grid fade-up" style="margin-top:2.5rem;">
+      <div class="gallery-item">
+        <img src="photo1.png" alt="Bridal makeup session">
+        <div class="gallery-item-overlay"><span class="gallery-overlay-icon">+</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="photo2.png" alt="South Indian bridal look">
+        <div class="gallery-item-overlay"><span class="gallery-overlay-icon">+</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="photo3.png" alt="Bridal hairstyle with braid">
+        <div class="gallery-item-overlay"><span class="gallery-overlay-icon">+</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="photo4.png" alt="Elegant saree and makeup look">
+        <div class="gallery-item-overlay"><span class="gallery-overlay-icon">+</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="photo5.png" alt="Telugu bridal look with gold jewelry">
+        <div class="gallery-item-overlay"><span class="gallery-overlay-icon">+</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="photo6.png" alt="Pearl braid hairstyle">
+        <div class="gallery-item-overlay"><span class="gallery-overlay-icon">+</span></div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:3rem;">
+      <a href="https://www.instagram.com/__makeovermagic__/" target="_blank" class="btn-outline" style="border-color:rgba(201,168,76,0.5);color:var(--gold-light);">View Full Portfolio on Instagram</a>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section class="video-section" id="reels">
+  <div class="container">
+    <div class="fade-up">
+      <div class="section-tag">Behind the Scenes</div>
+      <h2 class="section-title">Watch the <em>Transformation</em></h2>
+    </div>
+    <div class="reels-grid fade-up">
+      <div class="reel-embed-wrap">
+        <iframe src="https://www.instagram.com/reel/DOUvKuugYY5/embed/" allowfullscreen scrolling="no" frameborder="0"></iframe>
+      </div>
+      <div class="reel-embed-wrap">
+        <iframe src="https://www.instagram.com/reel/DNVgRn1BxBT/embed/" allowfullscreen scrolling="no" frameborder="0"></iframe>
+      </div>
+      <div class="reel-embed-wrap">
+        <iframe src="https://www.instagram.com/reel/DNaQSaqhQjf/embed/" allowfullscreen scrolling="no" frameborder="0"></iframe>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:2rem;font-size:0.85rem;color:var(--muted);">Follow for more · <a href="https://www.instagram.com/__makeovermagic__/" target="_blank" style="color:var(--rose);text-decoration:none;">@__makeovermagic__</a></p>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="fade-up" style="text-align:center;">
+      <div class="section-tag" style="justify-content:center;">Client Love</div>
+      <h2 class="section-title">What Brides <em>Say</em></h2>
+    </div>
+    <div class="testimonials-grid fade-up">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Jyothi akka made me feel like a queen on my wedding day. The makeup lasted the entire function without any touch-ups. Absolutely magical!"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">P</div>
+          <div>
+            <div class="author-name">Priya Reddy</div>
+            <div class="author-event">Telugu Brahmin Wedding · Hyderabad</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"The bridal braid she did for my reception was stunning! Everyone kept asking who the artist was. She's so talented and patient with every detail."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">S</div>
+          <div>
+            <div class="author-name">Sravanthi K.</div>
+            <div class="author-event">Engagement & Wedding · Warangal</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"From saree draping to the full bridal look — Jyothi handled everything so professionally. I cried happy tears when I saw myself in the mirror!"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">A</div>
+          <div>
+            <div class="author-name">Anitha M.</div>
+            <div class="author-event">Grand Wedding · Karimnagar</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="fade-up">
+      <div class="section-tag">Get in Touch</div>
+      <h2 class="section-title">Book Your <em>Dream</em> Look</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info fade-up">
+        <p>Ready to look and feel your absolute best? Reach out to book Jyothi for your special occasion. Available across all of Telangana — at your venue, at your time.</p>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">📍</div>
+          <div>
+            <div class="contact-detail-label">Service Area</div>
+            <div class="contact-detail-value">All Across Telangana</div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">📸</div>
+          <div>
+            <div class="contact-detail-label">Instagram</div>
+            <div class="contact-detail-value">
+              <a href="https://www.instagram.com/__makeovermagic__/" target="_blank" style="color:var(--rose);text-decoration:none;">@__makeovermagic__</a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">⏰</div>
+          <div>
+            <div class="contact-detail-label">Availability</div>
+            <div class="contact-detail-value">All Days · By Appointment</div>
+          </div>
+        </div>
+        <div class="contact-social">
+          <a href="https://www.instagram.com/__makeovermagic__/" target="_blank" class="social-btn" title="Instagram">📷</a>
+          <a href="https://wa.me/" target="_blank" class="social-btn" title="WhatsApp">💬</a>
+        </div>
+        <div style="margin-top:2rem;padding:1.5rem;background:var(--rose-light);border-left:3px solid var(--rose);">
+          <p style="font-size:0.85rem;color:var(--rose);font-weight:500;margin-bottom:0.4rem;">For quick booking</p>
+          <p style="font-size:0.82rem;color:var(--muted);margin:0;">DM on Instagram <a href="https://www.instagram.com/__makeovermagic__/" target="_blank" style="color:var(--rose);">@__makeovermagic__</a> or use the form to send an enquiry.</p>
+        </div>
+      </div>
+      <div class="contact-form fade-up">
+        <form onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Your Name</label>
+              <input type="text" placeholder="Bride's name" required>
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" placeholder="+91 XXXXX XXXXX" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Event Date</label>
+            <input type="date" required>
+          </div>
+          <div class="form-group">
+            <label>Service Required</label>
+            <select required>
+              <option value="">Select a service...</option>
+              <option>Bridal Makeup</option>
+              <option>Engagement Makeup</option>
+              <option>HD Glam Makeup</option>
+              <option>Bridal Hairstyling</option>
+              <option>Saree Draping</option>
+              <option>Party / Event Makeup</option>
+              <option>Full Bridal Package</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Location in Telangana</label>
+            <input type="text" placeholder="Your city / district">
+          </div>
+          <div class="form-group">
+            <label>Additional Details</label>
+            <textarea placeholder="Tell us about your event, references, or any special requests..."></textarea>
+          </div>
+          <button type="submit" class="btn-primary" style="width:100%;border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:0.8rem;letter-spacing:0.12em;">Send Booking Enquiry</button>
+        </form>
+        <div id="form-success" style="display:none;margin-top:1rem;padding:1rem;background:#f0fdf4;border:1px solid #86efac;color:#166534;font-size:0.88rem;border-radius:2px;">
+          ✓ Thank you! Your enquiry has been received. Jyothi will get back to you soon on Instagram or WhatsApp.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Makeover <span>Magic</span></div>
+        <p class="footer-tagline">Blending colours, creating magic — certified bridal artistry serving brides across all of Telangana.</p>
+        <div style="display:flex;gap:1rem;">
+          <a href="https://www.instagram.com/__makeovermagic__/" target="_blank" style="color:var(--gold-light);font-size:0.8rem;text-decoration:none;letter-spacing:0.1em;">INSTAGRAM ↗</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Services</div>
+        <ul class="footer-links">
+          <li><a href="#services">Bridal Makeup</a></li>
+          <li><a href="#services">Engagement Glam</a></li>
+          <li><a href="#services">HD Makeup</a></li>
+          <li><a href="#services">Hairstyling</a></li>
+          <li><a href="#services">Saree Draping</a></li>
+          <li><a href="#services">Party Makeup</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">Quick Links</div>
+        <ul class="footer-links">
+          <li><a href="#about">About Jyothi</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#reels">Reels</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+          <li><a href="#contact">Book Now</a></li>
+          <li><a href="https://www.instagram.com/__makeovermagic__/" target="_blank">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Makeover Magic by Jyothi · All Telangana</span>
+      <span>Made with ♥ for beautiful brides</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Navbar scroll
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+  // Fade-up on scroll
+  const fadeEls = document.querySelectorAll('.fade-up');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  fadeEls.forEach(el => observer.observe(el));
+
+  // Form submit
+  function handleSubmit(e) {
+    e.preventDefault();
+    document.getElementById('form-success').style.display = 'block';
+    e.target.reset();
+    setTimeout(() => {
+      document.getElementById('form-success').style.display = 'none';
+    }, 6000);
+  }
+</script>
+</body>
+</html>
